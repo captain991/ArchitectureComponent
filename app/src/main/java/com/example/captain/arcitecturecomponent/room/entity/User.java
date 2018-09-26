@@ -2,6 +2,7 @@ package com.example.captain.arcitecturecomponent.room.entity;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
+import android.support.annotation.NonNull;
 
 /**
  * Created by captain on 2018/9/24 下午11:31}.
@@ -13,7 +14,8 @@ public class User {
     private String name;
     private int age;
 
-    public User(String name, int age) {
+    public User(int id, String name, int age) {
+        this.id = id;
         this.name = name;
         this.age = age;
     }
