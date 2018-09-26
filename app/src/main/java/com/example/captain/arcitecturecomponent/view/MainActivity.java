@@ -1,10 +1,12 @@
-package com.example.captain.arcitecturecomponent;
+package com.example.captain.arcitecturecomponent.view;
 
 import android.arch.persistence.room.Room;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.example.captain.arcitecturecomponent.entity.User;
+import com.example.captain.arcitecturecomponent.R;
+import com.example.captain.arcitecturecomponent.room.AppDatabase;
+import com.example.captain.arcitecturecomponent.room.entity.User;
 
 import io.reactivex.Observable;
 import io.reactivex.Observer;
@@ -18,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         AppDatabase appDatabase = Room.databaseBuilder(this, AppDatabase.class, "ArchitectureComponent").build();
-        Observable.just(new User("Joe", "123", 20))
+        Observable.just(new User("Joe",20))
                 .subscribeOn(Schedulers.io())
                 .subscribe(new Observer<User>() {
                     @Override

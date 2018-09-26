@@ -12,7 +12,6 @@ public class AndroidApplication extends Application {
     public void onCreate() {
         super.onCreate();
         SQLiteStudioService.instance().start(this);
-        SQLiteStudioService.instance().setPort(12121);
     }
 
 }

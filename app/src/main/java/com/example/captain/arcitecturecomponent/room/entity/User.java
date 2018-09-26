@@ -1,4 +1,4 @@
-package com.example.captain.arcitecturecomponent.entity;
+package com.example.captain.arcitecturecomponent.room.entity;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
@@ -11,12 +11,10 @@ public class User {
     @PrimaryKey
     private int id;
     private String name;
-    private String pwd;
     private int age;
 
-    public User(String name, String pwd, int age) {
+    public User(String name, int age) {
         this.name = name;
-        this.pwd = pwd;
         this.age = age;
     }
 
@@ -34,14 +32,6 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getPwd() {
-        return pwd;
-    }
-
-    public void setPwd(String pwd) {
-        this.pwd = pwd;
     }
 
     public int getAge() {

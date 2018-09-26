@@ -1,11 +1,11 @@
-package com.example.captain.arcitecturecomponent.dao;
+package com.example.captain.arcitecturecomponent.room.dao;
 
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.Query;
 
-import com.example.captain.arcitecturecomponent.entity.User;
+import com.example.captain.arcitecturecomponent.room.entity.User;
 
 /**
  * Created by captain on 2018/9/26 上午12:13}.
@@ -16,5 +16,5 @@ public interface UserDAO {
     void insertUser(User user);
 
     @Query("SELECT * FROM user WHERE id = :id")
-    com.example.captain.arcitecturecomponent.entity.User getUser(int id);
+    com.example.captain.arcitecturecomponent.room.entity.User getUser(int id);
 }
